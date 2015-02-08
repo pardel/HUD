@@ -485,6 +485,7 @@
 				DA2A751D1A86B46E0090FA65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA2A751E1A86B46E0090FA65 /* Build configuration list for PBXNativeTarget "DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +494,7 @@
 				DA2A75201A86B46E0090FA65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

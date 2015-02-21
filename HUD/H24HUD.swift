@@ -55,6 +55,11 @@ let sharedH24HUD = H24HUD()
     public class func hide() {
         sharedH24HUD.window.hide()
     }
+    public class func hideWithDelay(delay: Double) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW,  Int64(Double(NSEC_PER_SEC) * delay)), dispatch_get_main_queue()) {
+            sharedH24HUD.window.hide()
+        }
+    }
 }
 
 
@@ -137,7 +142,7 @@ class H24HUDViewController : UIViewController {
         
         backgroundIndicatorView.backgroundColor = UIColor.blackColor()
         backgroundIndicatorView.alpha = 0
-        backgroundIndicatorView.frame = CGRectMake(0, 0, 100, 100)
+        backgroundIndicatorView.frame = CGRectMake(0, 0, 200, 200)
         backgroundIndicatorView.center = view.center
         var viewLayer = backgroundIndicatorView.layer
         viewLayer.shadowColor = UIColor.whiteColor().CGColor
@@ -174,7 +179,7 @@ class H24HUDViewController : UIViewController {
         statusLabel.text = "Loading..."
         statusLabel.textColor = UIColor.whiteColor()
         statusLabel.textAlignment = .Center
-        statusLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleFootnote)
+        statusLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         statusLabel.numberOfLines = 0
         statusLabel.alpha = 0
         view.addSubview(statusLabel)
@@ -234,7 +239,7 @@ class H24HUDViewController : UIViewController {
     private func positionElements() {
         backgroundShadeView.frame = self.view.bounds
         
-        backgroundIndicatorView.frame = CGRectMake(0, 0, 150, 100)
+        backgroundIndicatorView.frame = CGRectMake(0, 0, 200, 100)
         backgroundIndicatorView.center = self.view.center
         backgroundShadeView.alpha = 0.3
         backgroundIndicatorView.alpha = 0.8
